@@ -1,3 +1,6 @@
+# PostgreSQL settings
+settings.json
+
 # Logs
 logs
 *.log
@@ -71,6 +74,3 @@ typings/
 
 # Serverless directories
 .serverless
-
-# PostgreSQL settings
-settings.json

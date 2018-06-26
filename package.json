@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/byeong0430/W4D2-PostgreSQL#readme",
   "dependencies": {
-    "dotenv": "^6.0.0",
     "pg": "^7.4.3"
   }
 }
