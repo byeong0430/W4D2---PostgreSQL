@@ -71,3 +71,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# PostgreSQL settings
+settings.json
