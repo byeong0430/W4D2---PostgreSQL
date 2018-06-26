@@ -15,13 +15,14 @@ const checkRecord = (knex, person, tb) => {
   });
 };
 
-// when there is a duplicate, log the duplicate info
+// when there is a duplicate, alert the duplicate info
 const showRecords = obj => {
   console.log(obj.message);
   console.log('==========');
   console.log(obj.record);
 };
 
+// insert record when there is no duplicate
 const insertRecords = (knex, tb, inputObj) => {
   return new Promise((resolve, reject) => {
     knex(tb).insert(inputObj)

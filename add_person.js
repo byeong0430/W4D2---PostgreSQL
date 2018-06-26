@@ -1,6 +1,6 @@
-
 // import package
-const knexfile = require('./knex/knex-file');
+const knexfile = require('./knexfile');
+// pass knexfile.development (knex configuration) to knex module
 const knex = require('knex')(knexfile.development);
 
 // import functions
