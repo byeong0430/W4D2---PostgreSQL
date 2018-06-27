@@ -1,18 +1,32 @@
-// import package
+// take inputs from commandline
+// [first_name, last_name, birthdate]
+const inputData = process.argv.slice(2);
+
+// import functions
+const { renderNames, convertStrToDate, allInputsValid, checkRecord, showRecords, insertRecords } = require('./libs/knex-helpers');
+
+// import packages
+const path = require("path");
 const knexfile = require('./knexfile');
+
 // pass knexfile.development (knex configuration) to knex module
 const knex = require('knex')(knexfile.development);
 
-// import functions
-const { checkRecord, showRecords, insertRecords } = require('./libs/knex-helpers');
+// check if all three parameters are correct
+if (!allInputsValid(path, inputData)) return;
+
+const first_name = renderNames(inputData[0]);
+const last_name = renderNames(inputData[1]);
+const birthdate = convertStrToDate(inputData[2]);
 
 // table
 const table = 'famous_people';
+
 // insert person
 const person = {
-  first_name: 'Harry',
-  last_name: 'Kim',
-  birthdate: new Date(1993, 12, 21)
+  first_name,
+  last_name,
+  birthdate
 };
 
 checkRecord(knex, person, table)
